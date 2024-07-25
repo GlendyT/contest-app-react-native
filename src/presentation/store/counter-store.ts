@@ -6,7 +6,7 @@ export interface CounterState {
   incrementBy: (value: number) => void;
 }
 
-export const useStoreCounter = create<CounterState>()(set => ({
+export const useCounterStore = create<CounterState>()(set => ({
   count: 1,
-  incrementBy: () => set(state => ({count: state.count + 1})),
+  incrementBy: (value) => set(state => ({count: state.count + value})),
 }));
